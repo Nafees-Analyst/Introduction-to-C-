@@ -24,7 +24,14 @@ public:
 
     }
 
-
+    //custom copy constructor
+    Teacher(Teacher &t){
+        cout<<"I am a custom Copy constructor"<<endl;
+        this->name = t.name;
+        this->age = t.age;
+        this->subject = t.subject;
+        this->salary = t.salary;
+    }
     //functoiion ot get info for constructor (parameterized)
 
     void getInfo(){
@@ -43,8 +50,10 @@ public:
 int main(){
 
 Teacher t1("Kamran",65,"C++",56000);
-t1.getInfo();
+// t1.getInfo();
+Teacher t2(t1); //custom copy constructor called
 
+t2.getInfo();
 
 // t1.name = "Zain";
 // t1.age = 45;
@@ -52,4 +61,5 @@ t1.getInfo();
 // t1.salary = 56000;
 
 // cout<<"The salary of the teacher is : "<<t1.salary<<endl;
+return 0;
 }
