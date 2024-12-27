@@ -10,12 +10,31 @@ public:
     double salary;
     //constructor created
     //this is a non-paramaterized constructor
-    Teacher (){
-        cout<<"this is a constructor."<<endl;
+    // Teacher (){
+    //     cout<<"this is a constructor."<<endl;
+    // }
+
+
+//parameterized constructor
+    Teacher (string n,int a, string s, double sal){
+        name = n;
+        age = a;
+        subject = s;
+        salary = sal;
+
     }
 
 
+    //functoiion ot get info for constructor (parameterized)
 
+    void getInfo(){
+        cout<<"The name of the teacher is :"<< name <<endl;
+        cout<<"The age of the teacher is: "<< age <<endl;
+        cout<<"The subject that teacher teaches: "<< subject <<endl;
+        cout<<"The salary of teacher is: "<< salary <<endl;
+
+
+    }
 };
 
 
@@ -23,11 +42,14 @@ public:
 
 int main(){
 
-Teacher t1;
-t1.name = "Zain";
-t1.age = 45;
-t1.subject = "C++";
-t1.salary = 56000;
+Teacher t1("Kamran",65,"C++",56000);
+t1.getInfo();
 
-cout<<"The salary of the teacher is : "<<t1.salary<<endl;
+
+// t1.name = "Zain";
+// t1.age = 45;
+// t1.subject = "C++";
+// t1.salary = 56000;
+
+// cout<<"The salary of the teacher is : "<<t1.salary<<endl;
 }
