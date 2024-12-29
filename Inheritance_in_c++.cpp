@@ -6,13 +6,11 @@ public:
     string name;
     int age;
 
-    // Person(string name,int age){
-    //     this->name = name;
-    //     this->age = age;
-    // }
-    Person(){
-            cout<<"paretn constructor"<<endl;
+    Person(string name,int age){
+        this->name = name;
+        this->age = age;
     }
+    
     ~Person(){
         cout<<"parent destructor"<<endl;
     }
@@ -22,8 +20,8 @@ public:
 class Student : public Person{
    public:
     int rollno;
-    Student(){
-        cout<<"child constructor"<<endl;
+    Student(string name , int age, int rollno):Person(name , age){
+        this->rollno = rollno;
     }
     ~Student(){
         cout<<"child destructor"<<endl;
@@ -40,10 +38,8 @@ void getInfo(){
 
 
 int main(){
-Student s1;
-s1.name = "Ali";
-s1.age = 34;
-s1.rollno = 101;    
+Student s1("Ali", 20, 123);
+    
 s1.getInfo();
 
 
